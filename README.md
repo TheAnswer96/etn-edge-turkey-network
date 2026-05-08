@@ -29,7 +29,7 @@ DIoU-NMS  (per-class, cross-class suppression disabled)
 
 ### Novel contributions
 
-- **Oval-biased centerness** — aspect ratio prior 1.2:1 tuned for top-down turkey body shape
+- **Oval-biased centerness** — aspect ratio tuned for top-down turkey body shape
 - **CIoU regression loss** — aspect-ratio aware bounding box regression
 - **DIoU-NMS** — centroid-distance-aware suppression reduces missed detections in dense flocks
 - **Periodic channel pruning** — structured sparsity during training for RPi deployment
