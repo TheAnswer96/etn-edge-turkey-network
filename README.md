@@ -21,11 +21,11 @@ DIoU-NMS  (per-class, cross-class suppression disabled)
 
 ### Backbones
 
-| Flag | Backbone | Init | Notes |
-|------|----------|------|-------|
-| `mobilenetv3` | MobileNetV3-Small | pretrained ImageNet | default |
-| `shufflenetv2` | ShuffleNetV2-0.5x | pretrained ImageNet | fastest on ARM |
-| `mobilenetv1` | MobileNetV1-1.0 | from scratch | best INT8 compatibility |
+| Flag | Backbone | Init |
+|------|----------|------|
+| `mobilenetv3` | MobileNetV3-Small | pretrained ImageNet | 
+| `shufflenetv2` | ShuffleNetV2-0.5x | pretrained ImageNet | 
+| `mobilenetv1` | MobileNetV1-1.0 | from scratch | 
 
 ### Novel contributions
 
