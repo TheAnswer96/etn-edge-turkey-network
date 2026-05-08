@@ -1,6 +1,6 @@
 # EdgeTurkeyNet
 
-Lightweight aerial turkey detector for edge deployment on Raspberry Pi 4B. Detects turkeys from drone top-down footage in two classes: **body** (class 0) and **neck** (class 1).
+Lightweight aerial turkey detector for edge deployment on Raspberry Pi. Detects turkeys from drone top-down footage in two classes: **body** (class 0) and **neck** (class 1).
 
 Built around a novel **Oval-FCOS** detection head with **DIoU-NMS** and **periodic channel pruning**, targeting 3–8 FPS on RPi CPU.
 
