@@ -2,7 +2,7 @@
 
 Lightweight aerial turkey detector for edge deployment on Raspberry Pi 4B. Detects turkeys from drone top-down footage in two classes: **body** (class 0) and **neck** (class 1).
 
-Built around a novel **Oval-FCOS** detection head with **DIoU-NMS** and **periodic channel pruning**, targeting 3–8 FPS on RPi 4B CPU.
+Built around a novel **Oval-FCOS** detection head with **DIoU-NMS** and **periodic channel pruning**, targeting 3–8 FPS on RPi CPU.
 
 ---
 
@@ -61,7 +61,7 @@ Dataset expected at `data/dataset_split/{train,val,test}/{images,labels}` in YOL
 ### Train
 
 ```bash
-# Default (MobileNetV3, 100 epochs)
+# Default (ShuffleNetV2-0.5x, 100 epochs)
 python scripts/run_training.py
 
 # ShuffleNetV2, custom hyperparameters
@@ -106,16 +106,6 @@ python scripts/run_distillation.py
 
 Trains a scaled-down student (ShuffleNetV2, configurable width/depth multipliers) against a frozen teacher checkpoint. Runs KD student and scratch student in parallel for direct comparison.
 
-### YOLO evaluation scripts
-
-```bash
-# YOLO11 segmentation model (best.pt)
-python scripts/evaluate_best.py
-
-# YOLO11X detection model, behavior classes collapsed to class 0
-python scripts/evaluate_yolo11x.py
-```
-
 ### Frame inference
 
 ```bash
@@ -145,22 +135,6 @@ outputs/runs/<YYYYMMDD_HHMMSS>_<backbone>/
     inference_outputs/
         *.jpg
 ```
-
----
-
-## Raspberry Pi Deployment
-
-```bash
-# On RPi 4B
-pip install onnxruntime
-
-# For INT8 (ARM NEON acceleration)
-# In Python: torch.backends.quantized.engine = 'qnnpack'
-```
-
-Copy `edge_turkey_net.onnx` (FP32) or `edge_turkey_net_int8.pth` (INT8) to the device.
-
----
 
 ## Project Structure
 
